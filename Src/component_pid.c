@@ -1,5 +1,11 @@
 #include "User.h"
-
+/********** pid使用流程 **********/
+// encode_update() //1-更新编码器
+// pids[0].target = xx; //2-设置目标值
+// encode_get_speed() //3-获取编码器速度
+// pid_value_update() //4-更新pid值
+// pid_output_pwm() //5-输出pwm
+/****************************************/
 
 /********** 全局变量 **********/
 pid_t pids[] = 

@@ -1,5 +1,16 @@
 #include "User.h"
 #include <stdint.h>
+/************************** 串口相关函数 *********************************************/
+// UART_Receive_IT(usarts[i].huart, usarts[i].rxbuffer, 1); //将串口的接收指针定位到接收数组
+
+// void UART_RxCpltCallback(UART_HandleTypeDef *huart)      //串口接收中断回调函数
+// {
+//     if (huart->Instance == USART1)
+//     {
+
+//     }
+// }
+/**********************************************************************************/
 
 /********** 全局变量 **********/
 usart_t usarts[] = 
