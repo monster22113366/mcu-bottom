@@ -1,20 +1,25 @@
 #include "User.h"
 #include <stdint.h>
 
-/*************************定义全局变量************************************/
+/********** 全局变量 **********/
 usart_t usarts[] = 
 {
     {&huart1, {0}, 0, 0},
 };
 
 static uint8_t usart_num;
-/************************************************************************/
+/********** 全局变量 **********/
 
+
+/********** 1-外设数量初始化函数 **********/
 void usartnum_init(void)
 {
     usart_num = sizeof(usarts) / sizeof(usarts[0]);
 }
+/********** 1-外设数量初始化函数 **********/
 
+
+/********** 2-外设硬件初始化函数 **********/
 void usart_it_init(void)
 {
     for (uint8_t i = 0; i < usart_num; i++)
@@ -23,9 +28,10 @@ void usart_it_init(void)
     }
     
 }
+/********** 2-外设硬件初始化函数 **********/
 
 
-
+/********** 3-外设调用函数 **********/
 void usart_printf(UART_HandleTypeDef *huart, const char *fmt, ...)
 {
     va_list ap;
@@ -63,7 +69,7 @@ void usart_task(void)
         huart1.pRxBuffPtr = usarts[0].rxbuffer; // reset the pointer to the start of the buffer
     }
 }
-
+/********** 3-外设调用函数 **********/
 
 
 
