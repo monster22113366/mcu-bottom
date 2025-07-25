@@ -1,10 +1,11 @@
 #include "User.h"
+#include <sys/types.h>
 /********** pid使用流程 **********/
 // encode_update() //1-更新编码器
-// pids[0].target = xx; //2-设置目标值
-// encode_get_speed() //3-获取编码器速度
-// pid_value_update() //4-更新pid值
-// pid_output_pwm() //5-输出pwm
+// pids[0].target = xx; //2-目标
+// encode_get_speed() //3-读取
+// pid_value_update() //4-更新
+// pid_output_pwm() //5-输出
 /****************************************/
 
 /********** 全局变量 **********/
@@ -67,5 +68,4 @@ float pid_value_update(pid_t *pid, float current_value)
     
     return output;
 }
-
 /********** 3-外设调用函数 **********/
